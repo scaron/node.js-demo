@@ -1,0 +1,74 @@
+body {
+	font: 62.5%/1.2 Arial, Verdana, Sans-Serif;
+}
+
+#page {
+	background: #e1e1e1;
+	font-size: 1.4em;
+	margin: 0 auto;
+	padding: 20px;
+	width: 900px;
+	
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+h1 {
+	font-size: 1.6em;
+}
+
+h2 {
+	font-size: 1em;
+	margin: 25px 0 10px 0;
+}
+
+p {
+	margin: 0 0 25px 0;
+}
+
+a[href^='#'] {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8dbd53), to(#6c9b30));
+	background: -moz-linear-gradient(#8dbd53, #6c9b30);
+	border: 1px #83aa53 solid;
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+textarea {
+	background: #fff;
+	display: inline-block;
+	margin: 0 0 40px 0;
+	padding: 15px;
+	
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.ads {
+	float: right;
+	margin: 0 0 0 15px;
+	width: 260px;
+}
+
+.ads a {
+	float: left;
+}
+
+.cboth { clear: both; }
+
+#feed_holder {
+	background: #fff;
+	padding: 20px;
+	width: 575px;
+	
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}

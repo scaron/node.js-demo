@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/TR/html5/" lang="fr">
+	<head>
+		<title>Admin | node.js real time server</title>
+		
+		<link rel="stylesheet" href="/css/master.css" type="text/css" media="screen" title="Master stylesheet" charset="utf-8" />
+		
+		<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+		<script type="text/javascript" charset="utf-8"> 
+			google.load("jquery", "1.4.2");
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div class="ads">
+			<script type="text/javascript"> 
+			Vertical1237859 = false;
+			ShowAdHereBanner1237859 = true;
+			RepeatAll1237859 = false;
+			NoFollowAll1237859 = false;
+			BannerStyles1237859 = new Array(
+				"a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}",
+				"img{border:0;clear:right;}",
+				"a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+				"a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+			);
+
+			document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1237859/1237859.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+			</div>
+			
+			<h1>Deliver real-time information to your users using node.js</h1>
+			<p>Click on one of the following button to send an event to the <a href="/">demo page</a>.</p>
+			<p><a href="#" class="button" id="message" rel="message_sample">Send a message</a></p>
+			<h2>json sample</h2>
+			<p>Fell free to play with the json, just make sure it's valid.</p>
+			<textarea rows="10" cols="50" id="message_sample">
+{
+  type: 'message',
+  content: 'A message has been sent'
+}</textarea>
+
+			<p><a href="#" class="button" id="google_map" rel="google_map_sample">Display a google map</a></p>
+			<h2>json sample</h2>
+			<p>Fell free to play with the json, just make sure it's valid.</p>
+			<textarea rows="10" cols="50" id="google_map_sample">
+{
+  type: 'google_map',
+  content: {
+      lat: '37.331693',
+      long: '-122.0307642'
+  }
+}</textarea>
+
+			<p><a href="#" class="button" id="youtube" rel="youtube_sample">Display a YouTube video</a></p>
+			<h2>json sample</h2>
+			<p>Fell free to play with the json, just make sure it's valid.</p>
+			<textarea rows="10" cols="50" id="youtube_sample">
+{
+  type: 'youtube',
+  content: {
+      url: 'http://www.youtube.com/watch?v=B0ky-VMi9fI'
+  }
+}</textarea>
+			
+			<br class="cboth" />	
+		</div>
+		
+		<script type="text/javascript" charset="utf-8">
+			$('.button').click(function(){
+				json = eval('('+$('#'+$(this).attr('rel')).val()+')');
+				$.post(
+					'http://nodejs.no-margin-for-errors.com/send_feed_item',
+					json,
+					function(){
+						// Done!
+					}
+				);
+				
+				return false;
+			});
+		</script>
+	</body>
+</html>
