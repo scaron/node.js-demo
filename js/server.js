@@ -46,6 +46,7 @@ http.createServer(function (req, res) {
 	res.simpleJSON = function (code, obj) {
 		var body = JSON.stringify(obj);
 		res.writeHead(code, {
+							"Access-Control-Allow-Origin": "*",
 							"Content-Type": "text/json",
 							"Content-Length": body.length
 						}
