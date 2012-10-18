@@ -70,7 +70,7 @@
 			$('.button').click(function(){
 				json = eval('('+$('#'+$(this).attr('rel')).val()+')');
 				$.post(
-					window.location.origin+":8081"+'/send_feed_item',
+					window.location.origin+":8001"+'/send_feed_item',
 					json,
 					function(){
 						// Done!
