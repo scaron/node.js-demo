@@ -71,10 +71,11 @@
 				json = eval('('+$('#'+$(this).attr('rel')).val()+')');
 				$.post(
 					window.location.origin+":8001"+'/send_feed_item',
-					json,
+					JSON.stringify(json),
 					function(){
 						// Done!
-					}
+					},
+          "json"
 				);
 				
 				return false;

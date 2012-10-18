@@ -35,7 +35,7 @@ http.createServer(function (req, res) {
 				 					req.body = req.body + chunk;
 								})
 			.addListener('end', function () {
-									json = JSON.stringify(qs.parse(req.body));
+									json = req.body;
 									handler(req, res, json);
 		      					}
 						);
@@ -64,6 +64,8 @@ var feed = new function () {
 	this.appendMessage = function (json) {
 		// Append the new item.
 		real_time_items.push( json );
+
+    sys.puts(json);
 
 		// Log it to the console
 		sys.puts(new Date() + ": " + JSON.parse(json).type + " pushed");
