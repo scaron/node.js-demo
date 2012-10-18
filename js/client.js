@@ -4,7 +4,7 @@ function longPoll_feed () {
 			cache: false,
 			dataType: 'json',
 			type: "GET",
-			url: window.location.origin+":8081"+"/real_time_feed",
+			url: window.location.origin+":8001"+"/real_time_feed",
 			error: function () {
 				//don't flood the servers on error, wait 10 seconds before retrying
 				setTimeout(longPoll_feed, 10*1000);
